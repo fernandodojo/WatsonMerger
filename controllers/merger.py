@@ -31,3 +31,20 @@ class Merger:
             self._logger.log(str(e))
             print(e)
             raise
+
+    def merge_entities(self):
+        try:
+            for entity in list(self._primary_skill_dict.keys()):
+                self._merge_dict[entity] = {}
+                for value in self._primary_skill_dict[entity]:
+                    if self._primary_skill_dict[entity][value] and self._secondary_skill_dict[entity][value]:
+                        self._merge_dict[entity][value] = list(set(self._primary_skill_dict[entity][value] + 
+                                                                   self._secondary_skill_dict[entity][value]))
+                    else:
+                        self._merge_dict[entity][value] = self._primary_skill_dict[entity][value]
+            self._logger.log_merge("entities_merge", self._merge_dict)
+            return self._merge_dict
+        except Exception as e:
+            self._logger.log(str(e))
+            print(e)
+            raise
