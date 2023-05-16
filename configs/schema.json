@@ -1,0 +1,43 @@
+{
+    "type": "object",
+    "properties": {
+        "intents": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "intent": {
+                        "type": "string"
+                    },
+                    "examples": {
+                        "type": "array"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "entities": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "entity": {
+                        "type": "string"
+                    },
+                    "values": {
+                        "type": "array"
+                    },
+                    "fuzzy_match": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        }
+    },
+    "required": [
+        "intents",
+        "entities"
+    ]
+}

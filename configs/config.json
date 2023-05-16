@@ -1,0 +1,6 @@
+{
+    "primary_skill_dir":"./WatsonMerger/skills/primary/",
+    "secondary_skill_dir":"./WatsonMerger/skills/secondary/",
+    "log_directory":"./WatsonMerger/logs/",
+    "export_directory":"./WatsonMerger/export/"
+}
