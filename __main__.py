@@ -50,10 +50,12 @@ def main():
         # Entities Merge
         merger_entities = Merger(logger, primary_skill_entities_dict, secondary_skill_entities_dict)
         merge_entities_dict = merger_entities.merge_entities()
+        diff_entities_dict = merger_entities.diff_entities()
 
         # Entities Export
         export_entities = Exporter(_config['export_directory'], logger)
         export_entities.export_merge_entities(merge_entities_dict)
+        export_entities.export_diff_entities(diff_entities_dict)
 
         # Logs Export
         logger.export()

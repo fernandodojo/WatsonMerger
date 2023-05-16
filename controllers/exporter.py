@@ -68,3 +68,33 @@ class Exporter:
             self._logger.log(str(e))
             print(e)
             raise
+
+    def export_diff_entities(self, diff_dict):
+        try:
+            export_list = []
+            max_list = []
+            for entity in list(diff_dict.keys()):
+                for value in diff_dict[entity]:
+                    synonyms_list = []
+                    for synonyms in diff_dict[entity][value]:
+                        synonyms_list.append(synonyms)
+                    if len(synonyms_list) > 0:
+                        temp_list = []
+                        temp_list.extend([entity, value])
+                        temp_list.extend(synonyms_list)
+                        max_list.append(len(temp_list))
+                        export_list.append(temp_list)
+            max_len = max(max_list)
+
+            ([index.extend([""] * (max_len - len(index))) for index in export_list])
+
+            if not os.path.exists(self._export_directory):
+                os.makedirs(self._export_directory)
+
+            df = pd.DataFrame(export_list)
+            df.to_csv(self._export_directory + 'entities_diff.csv', index=False, header=False)
+            return export_list  
+        except Exception as e:
+            self._logger.log(str(e))
+            print(e)
+            raise
