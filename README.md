@@ -125,6 +125,6 @@ Acknowledgments
 [python-shield]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
 [python-url]: https://www.python.org/
 [license-shield]: https://img.shields.io/github/license/fernandodojo/WatsonMerger.svg?style=for-the-badge
-[license-url]: https://github.com/fernandodojo/WatsonMerger/blob/MAIN/LICENSE
+[license-url]: https://github.com/fernandodojo/WatsonMerger/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/fernando-henrique-fernandes-leite
