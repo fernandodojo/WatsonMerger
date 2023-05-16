@@ -31,10 +31,12 @@ def main():
         # Intentes Merge
         merger_intents = Merger(logger, primary_skill_intents_dict, secondary_skill_dict)
         merge_intents_dict = merger_intents.merge_intents()
+        diff_intents_dict = merger_intents.diff_intents()
 
         # Intents Export
         exporter_intents = Exporter(_config['export_directory'], logger)
         exporter_intents.export_merge_intents(merge_intents_dict)
+        exporter_intents.export_diff_intents(diff_intents_dict)
 
         # Logs Export
         logger.export()

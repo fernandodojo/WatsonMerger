@@ -19,3 +19,15 @@ class Merger:
             self._logger.log(str(e))
             print(e)
             raise    
+
+    def diff_intents(self):
+        try:
+            for intent in list(self._primary_skill_dict.keys()):
+                self._diff_dict[intent] = list(set(self._primary_skill_dict[intent]).
+                                               difference(self._secondary_skill_dict[intent]))
+            self._logger.log_merge("intents_diff", self._diff_dict)
+            return self._diff_dict
+        except Exception as e:
+            self._logger.log(str(e))
+            print(e)
+            raise
