@@ -1,7 +1,7 @@
 import json
 from copy import deepcopy
-from controllers import Merger, Intents, Exporter
-from utils import Logger, File
+from controllers import Entities, Exporter, Intents, Merger
+from utils import File, Logger
 
 
 def main():
@@ -37,6 +37,23 @@ def main():
         exporter_intents = Exporter(_config['export_directory'], logger)
         exporter_intents.export_merge_intents(merge_intents_dict)
         exporter_intents.export_diff_intents(diff_intents_dict)
+
+        # Entities Parse
+        primary_skill_entities_data = Entities(logger, primary_skill_file)
+        temp_primary_skill_entities_dict = primary_skill_entities_data.load()
+        primary_skill_entities_dict = deepcopy(temp_primary_skill_entities_dict)
+
+        secondary_skill_entities_data = Entities(logger, secondary_skill_file)
+        temp_secondary_skill_entities_dict = secondary_skill_entities_data.load()
+        secondary_skill_entities_dict = deepcopy(temp_secondary_skill_entities_dict)
+
+        # Entities Merge
+        merger_entities = Merger(logger, primary_skill_entities_dict, secondary_skill_entities_dict)
+        merge_entities_dict = merger_entities.merge_entities()
+
+        # Entities Export
+        export_entities = Exporter(_config['export_directory'], logger)
+        export_entities.export_merge_entities(merge_entities_dict)
 
         # Logs Export
         logger.export()
