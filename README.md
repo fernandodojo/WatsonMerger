@@ -66,17 +66,17 @@ Installation
 Usage
 =====
 
-1. Insert primary main skill into the folder "./WatsonMerger/skills/primary/" located onto project root folder.**
+1. Insert primary main skill into the folder "WatsonMerger/skills/primary/" located onto project root folder.**
 
-2. Insert secondary skill into the folder "./WatsonMerger/skills/secondary/" located onto project root folder.**
+2. Insert secondary skill into the folder "WatsonMerger/skills/secondary/" located onto project root folder.**
   
 3. Outside the root folder run:
    ```sh
    python WatsonMerger
    ```
-4. The folder "./WatsonMerger/export/" contains csv files resulting from the merge or diff operations
+4. The folder "WatsonMerger/export/" contains csv files resulting from the merge or diff operations
 
-5. The folder "./WatsonMerger/logs/" contains logs in json files resulting from the merge or diff operations.
+5. The folder "WatsonMerger/logs/" contains logs in json files resulting from the merge or diff operations.
    
 ** Only the latest file inside wich of the above folders will be executed.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
