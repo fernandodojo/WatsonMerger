@@ -66,9 +66,9 @@ Installation
 Usage
 =====
 
-1. Insert primary main skill into the folder "./WatsonMerger/skills/primary/" located onto project root folder.
+1. Insert primary main skill into the folder "./WatsonMerger/skills/primary/" located onto project root folder.**
 
-2. Insert secondary skill into the folder "./WatsonMerger/skills/secondary/" located onto project root folder.
+2. Insert secondary skill into the folder "./WatsonMerger/skills/secondary/" located onto project root folder.**
   
 3. Outside the root folder run:
    ```sh
