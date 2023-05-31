@@ -1,7 +1,8 @@
 import json
 from copy import deepcopy
-from controllers import Entities, Exporter, Intents, Merger, Threading
-from utils import File, Logger
+from controllers import Exporter, Merger, Threading
+from modules import Entities, File, Intents
+from utils import Logger
 
 
 def intents_threading(logger, config, primary_skill_file, secondary_skill_file):
@@ -80,11 +81,11 @@ def main():
         intents_thread.start()
         entities_thread.start()
 
-        # Logs Export
-        logger.export()
-
         print("Intents execution successful: {}".format(intents_thread.join()))
         print("Entities execution successful: {}".format(entities_thread.join()))
+
+        # Logs Export
+        logger.export()
 
     except Exception as e:
         print(e)
